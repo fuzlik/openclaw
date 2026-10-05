@@ -1,0 +1,38 @@
+// Целевая форма конфига OpenClaw (ИЛЛЮСТРАЦИЯ).
+// Реальный файл: %USERPROFILE%\.openclaw\openclaw.json
+// Секреты подставлять локально. Не коммитить заполненные значения.
+
+{
+  agents: {
+    defaults: {
+      workspace: "<ABS_PATH_TO_REPO>/workspace",
+    },
+    entries: {
+      main: {
+        name: "main",
+        workspace: "<ABS_PATH_TO_REPO>/workspace",
+      },
+    },
+  },
+  gateway: {
+    mode: "local",
+    bind: "loopback",
+    port: 18789,
+    auth: {
+      mode: "token",
+      // token: generated locally by onboard — do not paste into git
+    },
+    tailscale: { mode: "off" },
+  },
+  channels: {
+    telegram: {
+      enabled: true,
+      // botToken or tokenFile / TELEGRAM_BOT_TOKEN — local only
+      dmPolicy: "pairing",
+      groups: {
+        "*": { requireMention: true },
+      },
+    },
+  },
+  // tools.profile: "full" OK on personal home machine (see decisions D17)
+}

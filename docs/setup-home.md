@@ -1,48 +1,13 @@
-# Установка на домашнем ноуте (Windows)
+# План Windows → см. runbook
 
-## 1. Клон
+Полная инструкция для агента: **[runbook-home.md](runbook-home.md)**.
 
-```powershell
-git clone https://github.com/fuzlik/openclaw.git
-cd openclaw
-```
+Кратко:
 
-## 2. CLI
+1. Клон `fuzlik/openclaw`
+2. `install.ps1 -NoOnboard`
+3. API-ключ → `openclaw onboard` (local, loopback, daemon)
+4. Telegram → `docs/telegram.md`
+5. `docs/verify.md`
 
-```powershell
-& ([scriptblock]::Create((iwr -useb https://openclaw.ai/install.ps1))) -NoOnboard
-```
-
-Или Companion из Start / winget: `OpenClaw.OpenClawCompanion`.
-
-## 3. Onboard
-
-```powershell
-openclaw onboard
-```
-
-- Mode: **local**
-- Bind: **loopback**
-- Auth: API-ключ (Anthropic / OpenAI / OpenRouter) — только на доме
-- Daemon: да (Scheduled Task или Startup)
-
-Workspace можно указать в этот репо: `...\openclaw\workspace`.
-
-## 4. Telegram
-
-В onboard или позже — канал Telegram (pairing). Gateway не открывать в LAN без необходимости.
-
-## 5. Проверка
-
-```powershell
-openclaw --version
-openclaw doctor
-openclaw gateway status
-openclaw dashboard
-```
-
-UI: http://127.0.0.1:18789/
-
-## Заметки с рабочего ПК
-
-На рабочем ноуте CLI/Companion могли ставиться для пробы — Gateway и автозапуск сняты. На работе OpenClaw не гонять.
+Companion опционален. WSL2 — fallback.

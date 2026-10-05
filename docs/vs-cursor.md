@@ -1,6 +1,7 @@
 ﻿# Roles
 
-- **Cursor** — IDE, код, MCP (TeamStorm, Figma, GitLab).
-- **OpenClaw** — always-on ассистент в чатах, память, inbox/reminders.
+- **Cursor** — IDE, код, Figma, TeamStorm MCP, GitLab (в т.ч. на работе).
+- **OpenClaw (дом)** — always-on, Telegram, память, лёгкая автоматизация.
 
-Не дублировать полный доступ к Alabuga-контуру в OpenClaw.
+Не дублировать полный доступ к Alabuga-контуру в OpenClaw.  
+Решения: `docs/decisions.md` D12, D13.

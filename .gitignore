@@ -3,14 +3,19 @@
 .env.*
 !.env.example
 
+# Runtime workspace (created on home machine)
+workspace/
+!templates/workspace/
+
 # OpenClaw runtime / local data
 data/
-.state/
+state/
 *.key
 *.pem
 credentials/
 memory/
 sessions/
+.openclaw/
 
 # OS / editor
 .DS_Store

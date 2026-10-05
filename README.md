@@ -1,31 +1,37 @@
-﻿# OpenClaw
+﻿# OpenClaw (личный)
 
-Личный self-hosted AI-ассистент (OpenClaw Gateway).
+Конфиг и runbook для **домашнего** OpenClaw. Не форк upstream.
 
-- Сайт: https://openclaw.ai/
-- Docs: https://docs.openclaw.ai/
-- Upstream: https://github.com/openclaw/openclaw
+| | |
+|--|--|
+| Upstream | https://github.com/openclaw/openclaw |
+| Docs | https://docs.openclaw.ai/ |
+| Этот remote | https://github.com/fuzlik/openclaw (private) |
 
-## Где ставить
+## Дома: скажи нейросети сделать
 
-**Домашний ноут** — основной хост (Gateway + Telegram + always-on).  
-**Рабочий ноут (Alabuga)** — не использовать: корп-контур, Happ/VPN, секреты TeamStorm.
+1. Открой этот репо на **домашнем** ноуте  
+2. Вставь промпт из [`PROMPT-HOME.md`](PROMPT-HOME.md)  
+3. Держи рядом API-ключ модели + Telegram bot token от `@BotFather`
 
-Это репо — конфиг и заметки. Runtime живёт в `~/.openclaw` на домашней машине.
+Агент обязан следовать [`AGENTS.md`](AGENTS.md).
 
-## Роль vs Cursor
+## Карта docs
 
-| Cursor (работа) | OpenClaw (дом) |
-|--------|----------|
-| Код, Figma, TeamStorm MCP | Telegram / always-on / память |
-| IDE loop | Gateway вне IDE |
+| Файл | Зачем |
+|------|--------|
+| [`AGENTS.md`](AGENTS.md) | Инструкция агенту |
+| [`PROMPT-HOME.md`](PROMPT-HOME.md) | Copy-paste промпт |
+| [`docs/decisions.md`](docs/decisions.md) | Зафиксированные решения |
+| [`docs/runbook-home.md`](docs/runbook-home.md) | Пошаговая установка |
+| [`docs/telegram.md`](docs/telegram.md) | Telegram |
+| [`docs/security.md`](docs/security.md) | Границы |
+| [`docs/verify.md`](docs/verify.md) | DoD / чеклист |
+| [`docs/owner.md`](docs/owner.md) | Кто владелец |
+| [`docs/status.md`](docs/status.md) | Что уже сделано |
+| [`config/openclaw.desired.json5`](config/openclaw.desired.json5) | Целевая форма конфига |
+| [`templates/workspace/`](templates/workspace/) | Стартовые SOUL/USER/IDENTITY |
 
-## Безопасность
+## Главное решение
 
-- Один trust-boundary на gateway (только ты).
-- Не класть сюда `.env`, токены storm/gitlab, ключи моделей.
-- Секреты только локально на домашнем ноуте.
-
-## Быстрый старт дома
-
-См. [docs/setup-home.md](docs/setup-home.md).
+**Runtime только дома.** Рабочий ноут Alabuga — не хост (см. decisions D1–D2).
