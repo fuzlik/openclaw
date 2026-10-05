@@ -14,9 +14,14 @@
 - Companion через winget ставился; для дома опционален
 - Не держать always-on на корп-ноуте
 
-## Модель
+## Модель (API)
 
-Выбрано: **OpenRouter** (`openrouter/auto`). Ключ ещё не создан — сделать дома на https://openrouter.ai/keys
+| Поле | Значение |
+|------|----------|
+| Провайдер | **OpenRouter** (зафиксировано, D11) |
+| Env | `OPENROUTER_API_KEY` |
+| Primary | `openrouter/auto` |
+| Ключ | ещё не создан → https://openrouter.ai/keys |
 
 ## Следующий шаг человека
 

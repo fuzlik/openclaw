@@ -8,11 +8,24 @@
 | Docs | https://docs.openclaw.ai/ |
 | Этот remote | https://github.com/fuzlik/openclaw (private) |
 
+## API модели (зафиксировано)
+
+| | |
+|--|--|
+| Провайдер | **OpenRouter** |
+| Env | `OPENROUTER_API_KEY` |
+| Primary | `openrouter/auto` |
+| Качество | `openrouter/~anthropic/claude-sonnet-latest` |
+| Ключ | https://openrouter.ai/keys |
+| Решение | `docs/decisions.md` → **D11**, детали → `docs/model.md` |
+
+Прямой Anthropic/OpenAI — только fallback, не default.
+
 ## Дома: скажи нейросети сделать
 
 1. Открой этот репо на **домашнем** ноуте  
 2. Вставь промпт из [`PROMPT-HOME.md`](PROMPT-HOME.md)  
-3. Держи рядом API-ключ модели + Telegram bot token от `@BotFather`
+3. Держи рядом: **`OPENROUTER_API_KEY`** + Telegram bot token от `@BotFather`
 
 Агент обязан следовать [`AGENTS.md`](AGENTS.md).
 
