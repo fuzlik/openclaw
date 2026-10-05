@@ -1,6 +1,5 @@
-﻿# План установки (Windows)
+﻿# Windows — куда смотреть
 
-1. Поставить OpenClaw Gateway по docs: https://docs.openclaw.ai/
-2. Привязать Telegram (pairing), не открывать gateway наружу без auth.
-3. Skills: только read-only к дайджестам; без shell на корп-секреты.
-4. Cursor остаётся основным для кода / Figma / TeamStorm.
+Основной план: **[setup-home.md](setup-home.md)** (домашний ноут).
+
+Рабочий ноут Alabuga — не целевой хост. Не ставить daemon, не линковать корп-секреты.
