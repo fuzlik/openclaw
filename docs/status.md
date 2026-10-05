@@ -14,8 +14,12 @@
 - Companion через winget ставился; для дома опционален
 - Не держать always-on на корп-ноуте
 
+## Модель
+
+Выбрано: **OpenRouter** (`openrouter/auto`). Ключ ещё не создан — сделать дома на https://openrouter.ai/keys
+
 ## Следующий шаг человека
 
-1. Дома открыть Cursor/агента
-2. Вставить `PROMPT-HOME.md`
-3. Иметь под рукой API-ключ модели + Telegram bot token
+1. Аккаунт OpenRouter → Create Key → сохранить `OPENROUTER_API_KEY`
+2. Telegram `@BotFather` → bot token
+3. Дома: вставить `PROMPT-HOME.md` нейросети

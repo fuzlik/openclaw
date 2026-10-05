@@ -20,7 +20,7 @@
 - установлен OpenClaw CLI (актуальный stable)
 - локальный Gateway на `127.0.0.1:18789`, автозапуск после логина
 - workspace = `<этот-репо>/workspace`
-- модель с API-ключом владельца (Anthropic / OpenAI / OpenRouter — что даст)
+- модель через **OpenRouter** (`OPENROUTER_API_KEY`, primary `openrouter/auto`)
 - Telegram: бот + pairing только для владельца
 - Control UI открывается локально
 - секреты **не** в git
@@ -35,7 +35,7 @@
 
 ## Когда остановиться и спросить владельца (один короткий вопрос)
 
-- Нет API-ключа модели и нет способа получить его без UI владельца
+- Нет `OPENROUTER_API_KEY` (владелец создаёт на https://openrouter.ai/keys)
 - Нет Telegram bot token (@BotFather) — нужен интерактив владельца
 - Нужны права администратора Windows / reboot / WSL install, если native path окончательно сломан
 

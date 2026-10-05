@@ -52,30 +52,19 @@ openclaw --version
 
 Альтернатива: `npm install -g openclaw@latest` (см. docs; npm 12+ может требовать `--allow-scripts=openclaw`).
 
-## 3. Секреты модели (спросить владельца)
+## 3. Секрет модели — OpenRouter (D11)
 
-Положить в user env **или** в `%USERPROFILE%\.openclaw\.env` (не в git).
-
-Один из вариантов:
-
-| Выбор | Env |
-|-------|-----|
-| Anthropic | `ANTHROPIC_API_KEY` |
-| OpenAI | `OPENAI_API_KEY` |
-| OpenRouter | `OPENROUTER_API_KEY` |
-
-Пример (сессию):
+Владелец создаёт ключ: https://openrouter.ai/keys → Create Key.  
+Положить в user env (не в git):
 
 ```powershell
 # НЕ коммитить. Значение даёт владелец.
-[System.Environment]::SetEnvironmentVariable("ANTHROPIC_API_KEY", "<KEY>", "User")
+[System.Environment]::SetEnvironmentVariable("OPENROUTER_API_KEY", "<KEY>", "User")
+# переоткрыть терминал или:
+$env:OPENROUTER_API_KEY = [Environment]::GetEnvironmentVariable("OPENROUTER_API_KEY", "User")
 ```
 
-Соответствие `--auth-choice`:
-
-- Anthropic → `anthropic-api-key` + `--anthropic-api-key`
-- OpenAI → `openai-api-key` + `--openai-api-key` (может потребовать plugin review — см. docs onboard)
-- OpenRouter → `openrouter-api-key` + `--openrouter-api-key`
+Fallback (только если OpenRouter недоступен и владелец явно дал другой ключ): Anthropic / OpenAI — см. docs OpenClaw providers.
 
 ## 4. Onboard (non-interactive предпочтительно)
 
@@ -94,9 +83,19 @@ openclaw onboard --non-interactive --accept-risk `
   --skip-search `
   --workspace $ws `
   --agent-name main `
-  --auth-choice anthropic-api-key `
-  --anthropic-api-key $env:ANTHROPIC_API_KEY
+  --auth-choice openrouter-api-key `
+  --openrouter-api-key $env:OPENROUTER_API_KEY
 ```
+
+После onboard выставить primary model (если wizard не поставил):
+
+```powershell
+# в %USERPROFILE%\.openclaw\openclaw.json → agents.defaults.model.primary
+# "openrouter/auto"
+# опционально качество: "openrouter/~anthropic/claude-sonnet-latest"
+```
+
+Docs: https://docs.openclaw.ai/providers/openrouter
 
 Если interactive проще для владельца: `openclaw onboard` и следовать D5–D11.
 

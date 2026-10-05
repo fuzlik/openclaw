@@ -3,9 +3,17 @@
 // Секреты подставлять локально. Не коммитить заполненные значения.
 
 {
+  // OPENROUTER_API_KEY in env (D11)
   agents: {
     defaults: {
       workspace: "<ABS_PATH_TO_REPO>/workspace",
+      model: {
+        primary: "openrouter/auto",
+      },
+      models: {
+        "openrouter/auto": {},
+        "openrouter/~anthropic/claude-sonnet-latest": {},
+      },
     },
     entries: {
       main: {

@@ -13,7 +13,8 @@
 
 ## Model
 
-- [ ] Есть рабочий API-ключ (Anthropic / OpenAI / OpenRouter)
+- [ ] `OPENROUTER_API_KEY` задан (User env или локальный `.env` вне git)
+- [ ] Primary: `openrouter/auto` (или явно задокументирован Claude-ref)
 - [ ] В Control UI / TUI тестовое сообщение получает ответ модели
 
 ## Telegram

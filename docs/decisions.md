@@ -14,7 +14,7 @@
 | D8 | DM policy: **pairing**, approve только владельца | Чужие DM не исполнять |
 | D9 | Groups: requireMention / allowlist | Не болтать в чужих чатах |
 | D10 | Workspace: `<repo>/workspace` | Память рядом с репо; runtime state в `~/.openclaw` |
-| D11 | Модель: любой из Anthropic / OpenAI / OpenRouter — что даст владелец | Model-agnostic |
+| D11 | Провайдер модели: **OpenRouter** (`OPENROUTER_API_KEY`) | Один ключ; Claude/др. через роутер; `openrouter/auto` дешевле на heartbeat; прямой Anthropic/OpenAI — запасной путь |
 | D12 | Cursor остаётся IDE для кода/Figma/TeamStorm | OpenClaw = always-on + чаты + память |
 | D13 | Не подключать Alabuga MCP/токены в OpenClaw | Корп-контур отдельно |
 | D14 | Companion (Windows Hub) — опционально | CLI+Gateway достаточно; Companion = tray/UI |
@@ -25,8 +25,20 @@
 | D19 | Язык общения с владельцем: русский | Команды/логи — как есть |
 | D20 | Secrets: env или `~/.openclaw`, никогда git | `.gitignore` обязателен |
 
+## Модель (деталь D11)
+
+| Параметр | Значение |
+|----------|----------|
+| Auth choice | `openrouter-api-key` |
+| Env | `OPENROUTER_API_KEY` |
+| Primary model | `openrouter/auto` (старт; cost-aware) |
+| Качество по запросу | переключить на `openrouter/~anthropic/claude-sonnet-latest` |
+| Ключ взять | https://openrouter.ai/keys (аккаунт → Create key) |
+| Не путать | подписка Cursor ≠ API-ключ OpenClaw |
+
 ## Отвергнуто
 
 - Shared team gateway на корп-машине
 - Funnel / LAN bind без запроса
 - Замена Cursor OpenClaw’ом для кодинга
+- Прямой Anthropic/OpenAI как default (сложнее оплата/один вендор; оставляем fallback)

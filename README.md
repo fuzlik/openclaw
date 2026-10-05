@@ -27,6 +27,7 @@
 | [`docs/telegram.md`](docs/telegram.md) | Telegram |
 | [`docs/security.md`](docs/security.md) | Границы |
 | [`docs/verify.md`](docs/verify.md) | DoD / чеклист |
+| [`docs/model.md`](docs/model.md) | OpenRouter — ключ и модели |
 | [`docs/owner.md`](docs/owner.md) | Кто владелец |
 | [`docs/status.md`](docs/status.md) | Что уже сделано |
 | [`config/openclaw.desired.json5`](config/openclaw.desired.json5) | Целевая форма конфига |
